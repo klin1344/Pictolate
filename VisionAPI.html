@@ -46,7 +46,8 @@
  
  function ProcessResult(response)
  {
- var data = JSON.stringify(response);
+ var data = response.tags[0].name + ", " +  response.tags[1].name + ", " + response.tags[2].name + ", " + response.description.captions[0].text;
+ //var data = JSON.stringify(response);
  $("#response").text(data);
  }
  </script>
