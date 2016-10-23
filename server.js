@@ -34,7 +34,7 @@ app.get("/process", function(req,res){
 				
 				'string': tagEng1 + ". " + tagEng2 + ". " + descEng,
 				'sourceLanguage': 'en',
-				'targetLanguage': 'fr',
+				'targetLanguage': req.param("dropdown"),
 				'apiKey': 'AIzaSyCdSrPgLT9Ip8OEP_yYetMBAaCaGTwylN0'
 			 
 				}).on('success', (payload)=>{
