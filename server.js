@@ -48,7 +48,7 @@ app.get("/process", function(req,res){
                     mu.root = __dirname + '/static'
                     var stream = mu.compileAndRender('finalpage.html', {url: imgURL, tagEng1:tagEng1, tagEng2:tagEng2, tagTrans1:tagTrans1, tagTrans2:tagTrans2,
                         descEng:descEng, descTrans:descTrans})
-                    console.log(stream);
+                    //console.log(stream);
 
                     stream.pipe(res);
 
