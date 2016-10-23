@@ -34,15 +34,15 @@ app.get("/process", function(req,res){
             //message = JSON.parse(payload).tags[0].name + ". " + JSON.parse(payload).tags[1].name  + ". " +  JSON.parse(payload).description.captions[0].text 
             rapid.call('GoogleTranslate', 'translate', { 
                 
-                'string': tagEng1 + ". " + tagEng2 + ". " + descEng,
+                'string': tagEng1 + "|" + tagEng2 + "|" + descEng,
                 'sourceLanguage': 'en',
                 'targetLanguage': req.param("dropdown"),
                 'apiKey': 'AIzaSyCdSrPgLT9Ip8OEP_yYetMBAaCaGTwylN0'
              
                 }).on('success', (payload)=>{
-                    tagTrans1 = payload.split(". ")[0];
-                    tagTrans2 = payload.split(". ")[1];
-                    descTrans = payload.split(". ")[2];
+                    tagTrans1 = payload.split("|")[0];
+                    tagTrans2 = payload.split("|")[1];
+                    descTrans = payload.split("|")[2];
                     var mu = require('mu2'); // notice the "2" which matches the npm repo, sorry..
 
                     mu.root = __dirname + '/static'
